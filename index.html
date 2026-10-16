@@ -1,286 +1,1106 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kodiyarasan J | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: linear-gradient(135deg, #1f1c2c, #928dab);
-      color: #fff;
-      text-align: center;
-      padding: 3rem 1rem 2rem;
-      position: relative;
-    }
-    .profile-image {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #fff;
-      margin-bottom: 1rem;
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    }
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-    }
-    header p {
-      margin-top: 0.5rem;
-      font-size: 1.2rem;
-      font-weight: 400;
-    }
+  <title>Kodiyarasan Jayaraman | Flutter Developer Portfolio</title>
+  <meta name="description" content="Kodiyarasan Jayaraman – Flutter Developer with over 2+ years of professional experience building scalable cross-platform mobile apps for Android & iOS. Expert in Riverpod, Bloc, SQLCipher, Drift, Clean Architecture, and Offline-First Systems." />
+  <meta name="keywords" content="Kodiyarasan Jayaraman, Flutter Developer, Mobile App Developer, Dart, Riverpod, Bloc, Provider, SQLCipher, Offline-first, Clean Architecture, Android, iOS" />
+  <meta name="author" content="Kodiyarasan Jayaraman" />
 
-    nav {
-      margin-top: 1.5rem;
-    }
-    nav ul {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      list-style: none;
-      padding: 0;
-    }
-    nav ul li {
-      margin: 0.5rem 1rem;
-    }
-    nav ul li a {
-      color: #010101;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-    nav ul li a:hover {
-      color: #122ed0;
-    }
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kodiyarasan Jayaraman | Flutter Developer" />
+  <meta property="og:description" content="2+ years experience building enterprise, offline-first mobile applications with Flutter, Dart, Riverpod & Bloc." />
+  <meta property="og:url" content="https://kodiyarasanj26.github.io/portfolio/" />
+  <meta property="og:image" content="assets/profile.jpg" />
 
-    .menu-toggle {
-      display: none;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      flex-direction: column;
-      cursor: pointer;
-    }
-    .menu-toggle span {
-      height: 3px;
-      width: 25px;
-      background: white;
-      margin: 4px 0;
-      transition: 0.3s ease;
-    }
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    section {
-      padding: 3rem 1rem;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #333;
-      text-align: center;
-    }
-    .project-item, ul li {
-      background: #fff;
-      margin: 1rem 0;
-      padding: 1.5rem;
-      border-left: 6px solid #928dab;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    a {
-      color: #1f1c2c;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    a:hover {
-      color: #555;
-    }
-
-    footer {
-      background: #0c0c05;
-      color: #c8d207;
-      text-align: center;
-      padding: 1.5rem 1rem;
-      margin-top: 2rem;
-    }
-    footer a {
-      color: #cbcae5;
-    }
-
-    /* Responsive Styling */
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: flex;
-      }
-
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-        background: #2d2d44;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        overflow: hidden;
-        max-height: 0;
-        transition: max-height 0.4s ease;
-      }
-
-      nav ul.show {
-        max-height: 400px;
-      }
-
-      nav ul li {
-        margin: 1rem 0;
-      }
-
-      header h1 {
-        font-size: 1.8rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
-      .profile-image {
-        width: 100px;
-        height: 100px;
-      }
-      .project-item, ul li {
-        font-size: 0.95rem;
-      }
-      h2 {
-        font-size: 1.5rem;
-      }
-      section {
-        padding: 2rem 1rem;
-      }
-    }
-  </style>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
+  <!-- Ambient Background Lighting -->
+  <div class="ambient-glow" aria-hidden="true">
+    <div class="ambient-blob-1"></div>
+    <div class="ambient-blob-2"></div>
+    <div class="ambient-blob-3"></div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="#hero" class="nav-brand" aria-label="Kodiyarasan Jayaraman Home">
+        <div class="brand-icon">
+          <!-- Flutter Diamond SVG Logo -->
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M14.314 0L2.3 12 6.8 16.5 23.314 0h-9zM14.314 11.23L8.53 17.014 13.044 21.53 23.314 11.23h-9zM23.314 24l-4.514-4.514 4.514-4.514h-9l-4.514 4.514 4.514 4.514h9z"/>
+          </svg>
+        </div>
+        <div class="brand-meta">
+          <span class="brand-title">Kodiyarasan J</span>
+          <span class="brand-subtitle"><span class="status-dot"></span> Flutter Developer</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <a href="https://drive.google.com/file/d/1SU0zPXuKwXuNnp-X9V0tZ8qubpNUm5xk/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" class="btn-resume-nav">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>Resume</span>
+        </a>
+
+        <button id="mobileToggle" class="mobile-toggle" aria-label="Open Navigation Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
       </div>
-      <img src="https://drive.google.com/file/d/1STLt5xsZTQv7rYFNraENDwDpgbk-rBbG/view?usp=drivesdk" alt="Profile Picture" class="profile-image" />
-      <h1>Kodiyarasan Jayaraman</h1>
-      <p>Flutter Developer | Full-Stack Enthusiast</p>
-      <nav>
-        <ul id="navList">
-          <!-- <li><a href="#about">About</a></li> -->
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
     </div>
   </header>
 
-  <section id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>Detail-oriented Flutter Developer with 1 year of experience building responsive, cross-platform apps using BLoC, Provider, Firebase, and REST APIs. Passionate about clean UI/UX and contributing to innovative mobile solutions.</p>
-    </div>
-  </section>
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <span>2+ Years Professional Experience • Android & iOS</span>
+          </div>
 
-  <section id="qualification">
-    <div class="container">
-      <h2>Qualification</h2>
-      <div class="project-item">
-        <h3>Computer Science and Engineering (2020-2024)</h3>
-        <p>Mahendra Engineering College, Namakkal.</p>
+          <h1 class="hero-title">
+            Hi, I'm <span class="text-gradient">Kodiyarasan Jayaraman</span>
+          </h1>
+
+          <div class="hero-tagline">
+            <span>Flutter Developer</span>
+            <span style="color: var(--text-muted);">•</span>
+            <span style="color: var(--text-secondary); font-size: 1.05rem; font-weight: 500;">Enterprise Mobile Architect</span>
+          </div>
+
+          <p class="hero-bio">
+            Specializing in building <strong>scalable, offline-first cross-platform mobile applications</strong> for Android & iOS. Deep expertise in <strong>Clean Architecture</strong>, <strong>Riverpod & Bloc</strong>, <strong>SQLCipher encrypted local databases</strong>, <strong>biometric authentication</strong>, dynamic forms, and production App Store / Google Play Store deployments.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#projects" class="btn btn-primary">
+              <span>View Projects</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1SU0zPXuKwXuNnp-X9V0tZ8qubpNUm5xk/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              <span>Download Resume</span>
+            </a>
+
+            <a href="#contact" class="btn btn-outline">
+              <span>Contact Me</span>
+            </a>
+          </div>
+
+          <!-- Quick Contact Strip -->
+          <div class="hero-contact-strip">
+            <a href="mailto:kodiyarasanj26@gmail.com" class="contact-pill-item" title="Click to Email">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>kodiyarasanj26@gmail.com</span>
+            </a>
+
+            <a href="tel:+916379354271" class="contact-pill-item" title="Click to Call">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <span>+91 6379354271</span>
+            </a>
+
+            <span class="contact-pill-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Kumbakonam, Tamil Nadu</span>
+            </span>
+
+            <a href="https://www.linkedin.com/in/kodiyarasan-j-806693254" target="_blank" rel="noopener noreferrer" class="contact-pill-item">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Avatar Showcase -->
+        <div class="hero-visual">
+          <div class="avatar-wrapper">
+            <div class="avatar-halo"></div>
+            <div class="avatar-ring">
+              <img src="assets/profile.jpg" alt="Kodiyarasan Jayaraman - Flutter Developer" class="avatar-img" />
+            </div>
+
+            <!-- Floating Micro Badges -->
+            <div class="floating-chip chip-flutter">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M14.314 0L2.3 12 6.8 16.5 23.314 0h-9zM14.314 11.23L8.53 17.014 13.044 21.53 23.314 11.23h-9zM23.314 24l-4.514-4.514 4.514-4.514h-9l-4.514 4.514 4.514 4.514h9z"/>
+              </svg>
+              <span>Flutter & Dart</span>
+            </div>
+
+            <div class="floating-chip chip-riverpod">
+              <span>Riverpod & Bloc</span>
+            </div>
+
+            <div class="floating-chip chip-offline">
+              <span>SQLCipher Offline-First</span>
+            </div>
+
+            <div class="floating-chip chip-cleanarch">
+              <span>Clean Architecture</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="skills">
-    <div class="container">
-      <h2>Skills</h2>
-      <ul>
-        <li>Flutter & Dart</li>
-        <li>Git & GitHub</li>
-        <li>API Integration</li>
-        <li>Provider, Bloc</li>
-        <li>Firebase & Authendication, FireStore</li>
-        <li>Leadership</li>
+    <!-- Metrics & Counters Bar -->
+    <section class="stats-bar-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number">2+</div>
+            <div class="stat-label">Years Professional Exp</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Major Mobile Apps Shipped</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Offline-First Resilience</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2 Stores</div>
+            <div class="stat-label">App Store & Google Play</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Professional Background</span>
+          <h2 class="section-title">Architecting Enterprise Mobile Solutions</h2>
+          <p class="section-subtitle">Delivering high-performance mobile software built for offline resilience, robust security, and seamless user experiences.</p>
+        </div>
+
+        <div class="about-card">
+          <p class="about-summary-text">
+            I am a results-driven <strong>Flutter Developer with over 2+ years of professional experience</strong> engineering scalable cross-platform mobile applications for Android and iOS. My technical mastery spans <strong>Riverpod, Bloc, Provider, and Clean Architecture</strong>, with specialized deep-dive expertise in <strong>offline-first data synchronization</strong> using encrypted databases (SQLCipher & Drift) and background workers (WorkManager).
+          </p>
+          <p class="about-summary-text" style="margin-bottom: 0;">
+            From migrating mission-critical enterprise systems to modern state management to hardening mobile production security with <strong>Firebase App Check, Google Play Integrity, and Apple DeviceCheck</strong>, I ensure apps not only feel silky smooth at 60fps but withstand rigorous enterprise production demands.
+          </p>
+
+          <div class="about-pillars-grid">
+            <div class="pillar-item">
+              <div class="pillar-icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                  <path d="M2 17l10 5 10-5"></path>
+                  <path d="M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+              <h3 class="pillar-title">Clean Architecture</h3>
+              <p class="pillar-desc">Strict decoupling across Presentation, Domain, and Data layers with Riverpod & BLoC for testable, scalable enterprise codebases.</p>
+            </div>
+
+            <div class="pillar-item">
+              <div class="pillar-icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+              </div>
+              <h3 class="pillar-title">Offline-First Engine</h3>
+              <p class="pillar-desc">SQLCipher AES-256 encrypted storage, Drift ORM, and WorkManager background sync with HMAC-SHA256 cryptographic request signing.</p>
+            </div>
+
+            <div class="pillar-item">
+              <div class="pillar-icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+              </div>
+              <h3 class="pillar-title">Hardware & Security</h3>
+              <p class="pillar-desc">Biometric Auth (FaceID / Fingerprint), Google ML Kit OCR, Dynamic server-driven forms, Play Integrity, and Apple DeviceCheck.</p>
+            </div>
+
+            <div class="pillar-item">
+              <div class="pillar-icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <h3 class="pillar-title">Store Deployments</h3>
+              <p class="pillar-desc">Full release lifecycle management: iOS App Store Connect, certificates, provisioning profiles, Google Play Console, and Crashlytics tracking.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section id="experience" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Work History</span>
+          <h2 class="section-title">Professional Experience</h2>
+          <p class="section-subtitle">Proven track record developing enterprise cross-platform mobile applications.</p>
+        </div>
+
+        <div class="timeline-container">
+          <!-- Role 1: Vconnex Services Inc -->
+          <div class="timeline-card">
+            <div class="timeline-node"></div>
+            <div class="timeline-header">
+              <div>
+                <h3 class="role-title">Mobile App Developer</h3>
+                <span class="company-badge">Vconnex Services Inc (Remote)</span>
+                <div class="timeline-location">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Florida, USA (Remote)</span>
+                </div>
+              </div>
+              <div class="timeline-period-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>09/2025 – Present</span>
+              </div>
+            </div>
+
+            <ul class="experience-bullets">
+              <li>Architect and develop enterprise Flutter applications for Android & iOS, supporting field-service and real-time workforce workflows.</li>
+              <li>Engineer offline-first architecture using SQLCipher, Drift, and WorkManager for secure local storage and background synchronization.</li>
+              <li>Migrated legacy ChangeNotifier state management to Riverpod and implemented Clean Architecture for scalable and maintainable applications.</li>
+              <li>Develop dynamic server-driven forms, Google Maps integrations, ML Kit OCR, audio recording, PDF workflows, and biometric authentication.</li>
+            </ul>
+
+            <div class="experience-tags">
+              <span class="tag-badge">Flutter</span>
+              <span class="tag-badge">Riverpod</span>
+              <span class="tag-badge">Clean Architecture</span>
+              <span class="tag-badge">SQLCipher</span>
+              <span class="tag-badge">Drift</span>
+              <span class="tag-badge">WorkManager</span>
+              <span class="tag-badge">Google ML Kit (OCR)</span>
+              <span class="tag-badge">Biometric Auth</span>
+              <span class="tag-badge">Google Maps</span>
+            </div>
+          </div>
+
+          <!-- Role 2: Younderbots Pvt Ltd -->
+          <div class="timeline-card">
+            <div class="timeline-node"></div>
+            <div class="timeline-header">
+              <div>
+                <h3 class="role-title">Flutter Developer</h3>
+                <span class="company-badge">Younderbots Pvt Ltd</span>
+                <div class="timeline-location">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Kovilpatti, Tamil Nadu</span>
+                </div>
+              </div>
+              <div class="timeline-period-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>11/2024 – 07/2025</span>
+              </div>
+            </div>
+
+            <ul class="experience-bullets">
+              <li>Developed and deployed Flutter applications across e-commerce, booking, and logistics domains.</li>
+              <li>Implemented application state management using Bloc and Provider patterns.</li>
+              <li>Integrated RESTful APIs for data management, payments, and ticketing workflows.</li>
+              <li>Developed authentication, secure chat, ticket assignment, and admin dashboard features.</li>
+              <li>Managed Android and iOS builds, App Store and Google Play Store submissions, and production releases.</li>
+            </ul>
+
+            <div class="experience-tags">
+              <span class="tag-badge">Flutter</span>
+              <span class="tag-badge">Bloc</span>
+              <span class="tag-badge">Provider</span>
+              <span class="tag-badge">RESTful APIs</span>
+              <span class="tag-badge">Payment Gateways</span>
+              <span class="tag-badge">Secure Chat</span>
+              <span class="tag-badge">App Store Deploy</span>
+              <span class="tag-badge">Play Store Release</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Showcase Section -->
+    <section id="projects" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Portfolio Showcase</span>
+          <h2 class="section-title">Featured Mobile Applications</h2>
+          <p class="section-subtitle">Real-world production and enterprise mobile applications built with Flutter & Dart.</p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="enterprise">Enterprise & Mobility</button>
+          <button class="filter-btn" data-filter="statemgmt">IoT & Service Dispatch</button>
+          <button class="filter-btn" data-filter="social">Social & Community</button>
+          <button class="filter-btn" data-filter="fintech">FinTech & Payments</button>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: eField -->
+          <div class="project-card" data-category="enterprise">
+            <div class="project-media-wrap">
+              <img src="assets/efield.jpg" alt="eField - Field Service & Enterprise Mobility App" class="project-thumbnail" />
+              <div class="project-media-overlay">
+                <span class="project-category-pill">Enterprise Mobility</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">
+                <span>eField</span>
+              </h3>
+              <p class="project-desc">
+                Enterprise cross-platform mobile application (Android & iOS) designed for field workforce management, real-time operational support, and offline-capable data capture.
+              </p>
+              <ul class="project-highlights-preview">
+                <li>Encrypted local storage with SQLCipher & background sync via WorkManager</li>
+                <li>Migrated ChangeNotifier to Riverpod with Clean Architecture</li>
+                <li>Dynamic server-driven forms, ML Kit OCR, and HMAC-SHA256 request signing</li>
+              </ul>
+              <div class="project-tech-tags">
+                <span class="tag-badge">Riverpod</span>
+                <span class="tag-badge">SQLCipher</span>
+                <span class="tag-badge">Drift</span>
+                <span class="tag-badge">Dio</span>
+                <span class="tag-badge">ML Kit OCR</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn-case-study" data-open-modal="efield">
+                  <span>View Full Architecture</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: ACVMX -->
+          <div class="project-card" data-category="statemgmt">
+            <div class="project-media-wrap">
+              <img src="assets/acvmx.jpg" alt="ACVMX - Coffee Vending Machine App" class="project-thumbnail" />
+              <div class="project-media-overlay">
+                <span class="project-category-pill">IoT & Field Service</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">
+                <span>ACVMX – Vending App</span>
+              </h3>
+              <p class="project-desc">
+                Flutter application using Provider for state management and RESTful APIs, facilitating smart coffee vending operations, ticketing, and workforce dispatch.
+              </p>
+              <ul class="project-highlights-preview">
+                <li>Dual-role login flows for Customers and Field Workers with role-based access</li>
+                <li>Customer service ticket raising & Admin task assignment to workers</li>
+                <li>End-to-end Apple App Store submission, build setup & compliance handling</li>
+              </ul>
+              <div class="project-tech-tags">
+                <span class="tag-badge">Provider</span>
+                <span class="tag-badge">RESTful APIs</span>
+                <span class="tag-badge">Role Auth</span>
+                <span class="tag-badge">App Store Deploy</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn-case-study" data-open-modal="acvmx">
+                  <span>View Full Architecture</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Pepli -->
+          <div class="project-card" data-category="social">
+            <div class="project-media-wrap">
+              <img src="assets/pepli.jpg" alt="Pepli - Social Networking App" class="project-thumbnail" />
+              <div class="project-media-overlay">
+                <span class="project-category-pill">Social & Community</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">
+                <span>Pepli – Community App</span>
+              </h3>
+              <p class="project-desc">
+                Feature-rich social networking application focused on user engagement, multimedia feeds, and frictionless creator community interactions.
+              </p>
+              <ul class="project-highlights-preview">
+                <li>Developed and optimized user profile dashboards, stories, and feed modules</li>
+                <li>Integrated REST APIs for high-performance dynamic content loading</li>
+                <li>Improved app performance, UI responsiveness (60fps), and release cycles</li>
+              </ul>
+              <div class="project-tech-tags">
+                <span class="tag-badge">Flutter</span>
+                <span class="tag-badge">REST APIs</span>
+                <span class="tag-badge">Media Feed</span>
+                <span class="tag-badge">Performance Profiling</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn-case-study" data-open-modal="pepli">
+                  <span>View Full Architecture</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: PaySynce -->
+          <div class="project-card" data-category="fintech">
+            <div class="project-media-wrap">
+              <img src="assets/paysynce.jpg" alt="PaySynce - Digital Payment App" class="project-thumbnail" />
+              <div class="project-media-overlay">
+                <span class="project-category-pill">FinTech & Payments</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">
+                <span>PaySynce – FinTech App</span>
+              </h3>
+              <p class="project-desc">
+                High-security mobile payment application engineered for instant merchant checkouts, contact-based bill splitting, and peer-to-peer (P2P) transfers.
+              </p>
+              <ul class="project-highlights-preview">
+                <li>Facilitated merchant payments, contact-based bill splitting, and P2P transfers</li>
+                <li>Supervised reactive state & data flow via BLoC architecture with RESTful APIs</li>
+                <li>Strict transaction logging, error-handling pipelines, and financial safeguards</li>
+              </ul>
+              <div class="project-tech-tags">
+                <span class="tag-badge">BLoC</span>
+                <span class="tag-badge">RESTful APIs</span>
+                <span class="tag-badge">P2P Transfers</span>
+                <span class="tag-badge">Razorpay</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn-case-study" data-open-modal="paysynce">
+                  <span>View Full Architecture</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5: EasyMove -->
+          <div class="project-card" data-category="enterprise">
+            <div class="project-media-wrap">
+              <img src="assets/easymove.jpg" alt="EasyMove - Multi-Module Platform" class="project-thumbnail" />
+              <div class="project-media-overlay">
+                <span class="project-category-pill">Multi-Module Ecosystem</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">
+                <span>EasyMove – Super App</span>
+              </h3>
+              <p class="project-desc">
+                Comprehensive multi-domain Flutter application covering real estate, vehicle rentals, short stays, travel, logistics, and more in a unified architecture.
+              </p>
+              <ul class="project-highlights-preview">
+                <li>Deployed Provider and RESTful APIs across 7 modules (Rentals, Logistics, Flights)</li>
+                <li>Integrated location services, in-app chat, and escrow-backed payment gateways</li>
+                <li>Modular UI workflows for domain separation and future feature expansion</li>
+              </ul>
+              <div class="project-tech-tags">
+                <span class="tag-badge">Provider</span>
+                <span class="tag-badge">Google Maps</span>
+                <span class="tag-badge">In-App Chat</span>
+                <span class="tag-badge">Escrow Pay</span>
+              </div>
+              <div class="project-footer">
+                <button class="btn-case-study" data-open-modal="easymove">
+                  <span>View Full Architecture</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills Matrix Section -->
+    <section id="skills" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Expertise & Technologies</span>
+          <h2 class="section-title">Technical Skills Matrix</h2>
+          <p class="section-subtitle">Categorized breakdown of competencies, frameworks, and engineering tools.</p>
+        </div>
+
+        <div class="skills-categories-grid">
+          <!-- 1. Languages & Core -->
+          <div class="skill-category-card">
+            <div class="skill-category-head">
+              <div class="skill-cat-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h3>Languages & Core</h3>
+            </div>
+            <div class="skill-chips-wrap">
+              <span class="skill-chip featured">Dart</span>
+              <span class="skill-chip featured">Flutter SDK</span>
+              <span class="skill-chip">Java</span>
+              <span class="skill-chip">Object-Oriented Programming (OOP)</span>
+            </div>
+          </div>
+
+          <!-- 2. State Management & Architecture -->
+          <div class="skill-category-card">
+            <div class="skill-category-head">
+              <div class="skill-cat-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <h3>State Management & Architecture</h3>
+            </div>
+            <div class="skill-chips-wrap">
+              <span class="skill-chip featured">Riverpod</span>
+              <span class="skill-chip featured">Bloc</span>
+              <span class="skill-chip">Provider</span>
+              <span class="skill-chip featured">Clean Architecture</span>
+              <span class="skill-chip">MVVM</span>
+            </div>
+          </div>
+
+          <!-- 3. Databases & Local Storage -->
+          <div class="skill-category-card">
+            <div class="skill-category-head">
+              <div class="skill-cat-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+              </div>
+              <h3>Databases & Local Storage</h3>
+            </div>
+            <div class="skill-chips-wrap">
+              <span class="skill-chip featured">SQLCipher (Encrypted DB)</span>
+              <span class="skill-chip featured">Drift</span>
+              <span class="skill-chip">SQLite</span>
+              <span class="skill-chip">Hive</span>
+            </div>
+          </div>
+
+          <!-- 4. Firebase & Cloud -->
+          <div class="skill-category-card">
+            <div class="skill-category-head">
+              <div class="skill-cat-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                </svg>
+              </div>
+              <h3>Firebase & Cloud</h3>
+            </div>
+            <div class="skill-chips-wrap">
+              <span class="skill-chip featured">Firebase Core</span>
+              <span class="skill-chip">Cloud Firestore</span>
+              <span class="skill-chip featured">Firebase Crashlytics</span>
+              <span class="skill-chip">FCM (Push Notifications)</span>
+              <span class="skill-chip">Firebase App Check</span>
+            </div>
+          </div>
+
+          <!-- 5. APIs & Networking -->
+          <div class="skill-category-card">
+            <div class="skill-category-head">
+              <div class="skill-cat-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <h3>APIs & Networking</h3>
+            </div>
+            <div class="skill-chips-wrap">
+              <span class="skill-chip featured">Dio HTTP Client</span>
+              <span class="skill-chip featured">RESTful APIs</span>
+              <span class="skill-chip">WebSockets</span>
+              <span class="skill-chip">Google Maps Platform</span>
+              <span class="skill-chip">HMAC-SHA256 Signing</span>
+              <span class="skill-chip">JSON Serialization</span>
+            </div>
+          </div>
+
+          <!-- 6. Security & Authentication -->
+          <div class="skill-category-card">
+            <div class="skill-category-head">
+              <div class="skill-cat-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <h3>Security & Authentication</h3>
+            </div>
+            <div class="skill-chips-wrap">
+              <span class="skill-chip featured">Biometric Authentication</span>
+              <span class="skill-chip">OAuth 2.0</span>
+              <span class="skill-chip featured">Google Play Integrity</span>
+              <span class="skill-chip">Apple DeviceCheck</span>
+              <span class="skill-chip">Role-Based Access (RBAC)</span>
+            </div>
+          </div>
+
+          <!-- 7. App Features Built -->
+          <div class="skill-category-card">
+            <div class="skill-category-head">
+              <div class="skill-cat-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                  <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                </svg>
+              </div>
+              <h3>App Features Built</h3>
+            </div>
+            <div class="skill-chips-wrap">
+              <span class="skill-chip featured">Offline-First Apps</span>
+              <span class="skill-chip">WorkManager Background Sync</span>
+              <span class="skill-chip featured">Google ML Kit (OCR)</span>
+              <span class="skill-chip">Dynamic Server-Driven Forms</span>
+              <span class="skill-chip">In-App Chat & Ticketing</span>
+              <span class="skill-chip">Camera & Audio Capture</span>
+              <span class="skill-chip">PDF Viewing & Generation</span>
+            </div>
+          </div>
+
+          <!-- 8. Payment, Design & Deployment -->
+          <div class="skill-category-card">
+            <div class="skill-category-head">
+              <div class="skill-cat-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                </svg>
+              </div>
+              <h3>Tools, Deployment & Design</h3>
+            </div>
+            <div class="skill-chips-wrap">
+              <span class="skill-chip featured">App Store (iOS Builds)</span>
+              <span class="skill-chip featured">Google Play Store</span>
+              <span class="skill-chip">Razorpay</span>
+              <span class="skill-chip">Figma</span>
+              <span class="skill-chip">Material Design 3</span>
+              <span class="skill-chip">Git & GitHub</span>
+            </div>
+          </div>
+
+          <!-- 9. Professional Strengths & Interests -->
+          <div class="skill-category-card">
+            <div class="skill-category-head">
+              <div class="skill-cat-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <h3>Methodology & Strengths</h3>
+            </div>
+            <div class="skill-chips-wrap">
+              <span class="skill-chip">Problem Solving</span>
+              <span class="skill-chip">Agile & Scrum Methodology</span>
+              <span class="skill-chip">Technical Leadership</span>
+              <span class="skill-chip">Quick Learner</span>
+              <span class="skill-chip">Chess</span>
+              <span class="skill-chip">Carrom</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Academic Foundation</span>
+          <h2 class="section-title">Education & Qualifications</h2>
+          <p class="section-subtitle">Computer Science engineering grounding in data structures, algorithms, and software design.</p>
+        </div>
+
+        <div class="education-card">
+          <div class="edu-icon-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+            </svg>
+          </div>
+          <div class="edu-details">
+            <h3 class="edu-title">Bachelor of Computer Science and Engineering</h3>
+            <div class="edu-institution">Mahendra Engineering College, Namakkal</div>
+            <div class="edu-meta">
+              <span>07/2020 – 07/2024</span>
+              <span>•</span>
+              <span class="cgpa-pill">CGPA: 8.21 / 10.0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Connect Section -->
+    <section id="contact" class="section-wrapper">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Let's Connect</span>
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">Interested in collaborating or discussing Flutter engineering opportunities? Reach out anytime!</p>
+        </div>
+
+        <div class="contact-section-grid">
+          <!-- Left: Contact Details & Quick Copy -->
+          <div class="contact-info-card">
+            <h3>Direct Contact Channels</h3>
+            <p>I am available for full-time mobile development roles, remote engineering positions, and enterprise Flutter architectural consulting.</p>
+
+            <div class="contact-links-list">
+              <!-- Email -->
+              <div class="contact-action-item">
+                <div class="contact-item-left">
+                  <div class="contact-icon-wrap">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="contact-item-label">Email Address</span>
+                    <div class="contact-item-val">kodiyarasanj26@gmail.com</div>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 0.4rem;">
+                  <a href="mailto:kodiyarasanj26@gmail.com" class="btn-copy" title="Send Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="22" y1="2" x2="11" y2="13"></line>
+                      <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                  </a>
+                  <button class="btn-copy" data-copy-val="kodiyarasanj26@gmail.com" data-copy-label="Email" title="Copy to Clipboard">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div class="contact-action-item">
+                <div class="contact-item-left">
+                  <div class="contact-icon-wrap">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="contact-item-label">Phone / WhatsApp</span>
+                    <div class="contact-item-val">+91 6379354271</div>
+                  </div>
+                </div>
+                <div style="display: flex; gap: 0.4rem;">
+                  <a href="tel:+916379354271" class="btn-copy" title="Call Phone">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94"></path>
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                  </a>
+                  <button class="btn-copy" data-copy-val="+916379354271" data-copy-label="Phone Number" title="Copy to Clipboard">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Location -->
+              <div class="contact-action-item">
+                <div class="contact-item-left">
+                  <div class="contact-icon-wrap">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="contact-item-label">Location</span>
+                    <div class="contact-item-val">Kumbakonam, Tamil Nadu, India</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/in/kodiyarasan-j-806693254" target="_blank" rel="noopener noreferrer" class="contact-action-item">
+                <div class="contact-item-left">
+                  <div class="contact-icon-wrap">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                      <rect x="2" y="9" width="4" height="12"></rect>
+                      <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="contact-item-label">LinkedIn Profile</span>
+                    <div class="contact-item-val">linkedin.com/in/kodiyarasan-j-806693254</div>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+
+              <!-- Resume Link -->
+              <a href="https://drive.google.com/file/d/1SU0zPXuKwXuNnp-X9V0tZ8qubpNUm5xk/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" class="contact-action-item">
+                <div class="contact-item-left">
+                  <div class="contact-icon-wrap">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line>
+                      <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="contact-item-label">Curriculum Vitae</span>
+                    <div class="contact-item-val">Download Updated PDF Resume</div>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Message Form -->
+          <div class="contact-form-card">
+            <h3>Send a Message</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.94rem;">
+              Fill in your details to initiate an email directly with Kodiyarasan.
+            </p>
+
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="formName" class="form-label">Your Name</label>
+                <input type="text" id="formName" class="form-input" placeholder="e.g. Sarah Jenkins" required />
+              </div>
+
+              <div class="form-group">
+                <label for="formEmail" class="form-label">Your Email</label>
+                <input type="email" id="formEmail" class="form-input" placeholder="e.g. sarah@example.com" required />
+              </div>
+
+              <div class="form-group">
+                <label for="formMessage" class="form-label">Your Message / Opportunity Details</label>
+                <textarea id="formMessage" class="form-textarea" placeholder="Tell me about your mobile project, tech stack, or role..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%;">
+                <span>Send Message</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <ul class="footer-links">
+        <li><a href="#hero" class="footer-link">Home</a></li>
+        <li><a href="#about" class="footer-link">About</a></li>
+        <li><a href="#experience" class="footer-link">Experience</a></li>
+        <li><a href="#projects" class="footer-link">Projects</a></li>
+        <li><a href="#skills" class="footer-link">Skills</a></li>
+        <li><a href="#contact" class="footer-link">Contact</a></li>
+        <li><a href="https://drive.google.com/file/d/1SU0zPXuKwXuNnp-X9V0tZ8qubpNUm5xk/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" class="footer-link">Resume</a></li>
       </ul>
-    </div>
-  </section>
 
-  <section id="projects">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="project-item">
-        <h3>Ticket Raising Mobile Application</h3>
-        <p>Developed a mobile app using Flutter and REST API to streamline data management and user interactions.</p>
-      </div>
-      <div class="project-item">
-        <h3> SpotMe – Social Media App</h3>
-        <p>ChatGPT said:
-Developed a dynamic social platform in Flutter using BLoC with location tagging via Google Maps, reels & feed with smooth video playback. Integrated in-app purchases, real-time chat, and seamless state-managed navigation.</p>
-      </div>
-      <div class="project-item">
-        <h3> EasyMove – Multi‑Module Platform </h3>
-        <p>Built a comprehensive multi-domain Flutter app using Provider and RESTful APIs across real estate, travel, rentals, and logistics. Integrated location services, escrow payments, in-app chat, and modular UI for scalable feature expansion.</p>
-      </div>
-       <div class="project-item">
-        <h3>  ShopSea – E‑Commerce Shopping App </h3>
-        <p>Developed a feature-rich e-commerce app with Firebase Auth, dynamic product listings, and seamless checkout. Integrated payment, reviews, and optimized shopping experience with category-based search and filters.</p>
-      </div>
+      <p class="footer-copyright">
+        &copy; 2026 Kodiyarasan Jayaraman. All rights reserved. Crafted with Flutter Developer Precision.
+      </p>
     </div>
-  </section>
-
-  <section id="experience">
-    <div class="container">
-      <h2> PROFESSIONAL EXPERIENCE</h2>
-      <ul>
-        <li> Flutter Developer - Younderbots Pvt Ltd, Kovilpatty-TamilNadu - Present</li>
-        <li> Flutter Developer Intern - KS Smart Solutions Pvt Ltd, Chennai - 07/2024 – 11/2024</li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:kodiyarasanj26@gmail.com">kodiyarasanj26@gmail.com</a></p>
-      <p>Phone: 6379354271</p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/kodiyarasan-j-806693254" target="_blank">View Profile</a></p>
-      <p>Resume: <a href="https://drive.google.com/file/d/1SU0zPXuKwXuNnp-X9V0tZ8qubpNUm5xk/view?usp=drivesdk" target="_blank">View Resume</a></p>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Kodiyarasan J. All rights reserved. | <a href="#about">Back to Top</a></p>
   </footer>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById("navList").classList.toggle("show");
-    }
-  </script>
+  <!-- Project Case Study Modal -->
+  <div id="projectModal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <h3 id="modalTitle">Project Title</h3>
+          <p id="modalCategory">Category</p>
+        </div>
+        <button id="modalCloseBtn" class="btn-close-modal" aria-label="Close Modal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <img id="modalImage" src="" alt="Project Preview" class="modal-image" />
+
+        <h4 class="modal-section-title">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          <span>Project Overview</span>
+        </h4>
+        <p id="modalOverview" style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 1.5rem;"></p>
+
+        <h4 class="modal-section-title">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          <span>Key Architectural Achievements</span>
+        </h4>
+        <ul id="modalAchievements" class="modal-bullet-list"></ul>
+
+        <h4 class="modal-section-title">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+            <line x1="6" y1="18" x2="6.01" y2="18"></line>
+          </svg>
+          <span>Technical Architecture Breakdown</span>
+        </h4>
+        <div id="modalArchitecture"></div>
+
+        <h4 class="modal-section-title" style="margin-top: 1.5rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+            <line x1="7" y1="7" x2="7.01" y2="7"></line>
+          </svg>
+          <span>Technologies & Libraries</span>
+        </h4>
+        <div id="modalTags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastNotice" class="toast-notice" aria-live="polite"></div>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
 </body>
 </html>
